@@ -1,12 +1,9 @@
 import React, { useState } from 'react'
 
-/**
- * guestCount: 1 o 2.
- * - 1: solo se pregunta si asistirá (invitación individual, sin acompañante).
- * - 2: además se pregunta si llevará a su acompañante (invitación doble).
- */
+const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxkwcGa-B9KF3Fo9J4sx0-QPogUAvkgCqO--Y-5twpftlDxU1nZcCPxXI6ntT1odogdHQ/exec'
+
 export default function RsvpForm({ guestCount = 1 }) {
-  const [submitted, setSubmitted] = useState(false)
+  const [status, setStatus] = useState('idle') // idle | loading | ok | duplicate | error
   const [data, setData] = useState({
     name: '',
     attend: 'si',
@@ -18,19 +15,36 @@ export default function RsvpForm({ guestCount = 1 }) {
     setData({ ...data, [field]: e.target.value })
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    const payload = {
-      name: data.name,
-      attend: data.attend,
-      guestCount,
-      bringsCompanion: guestCount === 2 ? data.bringsCompanion : null,
-      diet: data.diet,
+    setStatus('loading')
+
+    try {
+      await fetch(APPS_SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: data.name,
+          attend: data.attend,
+          bringsCompanion: guestCount === 2 ? data.bringsCompanion : null,
+          diet: data.diet,
+          guestCount,
+        }),
+      })
+
+      // Con no-cors no podemos leer la respuesta, así que verificamos
+      // consultando de nuevo si el nombre ya quedó registrado
+      const check = await fetch(
+        `${APPS_SCRIPT_URL}?action=check&name=${encodeURIComponent(data.name)}`
+      )
+      const result = await check.json()
+
+      setStatus(result.status === 'duplicate' ? 'duplicate' : 'ok')
+
+    } catch (err) {
+      setStatus('error')
     }
-    // Aquí puedes conectar con tu backend (Google Apps Script, Formspree, etc.)
-    // Por ejemplo: fetch('https://tu-endpoint.com/rsvp', { method: 'POST', body: JSON.stringify(payload) })
-    console.log('Confirmación recibida:', payload)
-    setSubmitted(true)
   }
 
   const inputStyle = {
@@ -42,24 +56,55 @@ export default function RsvpForm({ guestCount = 1 }) {
     background: '#fffdf8',
   }
 
-  if (submitted) {
-    let summary
-    if (data.attend !== 'si') {
-      summary = 'Lamentamos que no puedas acompañarnos.'
-    } else if (guestCount === 2) {
-      summary =
-        data.bringsCompanion === 'si'
-          ? 'Te esperamos junto a tu acompañante.'
-          : 'Te esperamos, anotado que asistirás solo/a.'
-    } else {
-      summary = 'Te esperamos en nuestra boda.'
-    }
+  if (status === 'loading') {
+    return (
+      <div style={{ textAlign: 'center', padding: '1.5rem 0' }}>
+        <p style={{ color: '#5f5e5a', fontSize: '14px' }}>Enviando confirmación...</p>
+      </div>
+    )
+  }
 
+  if (status === 'ok') {
+    const msg = data.attend !== 'si'
+      ? 'Lamentamos que no puedas acompañarnos.'
+      : guestCount === 2 && data.bringsCompanion === 'si'
+        ? 'Te esperamos junto a tu acompañante.'
+        : 'Te esperamos en nuestra boda.'
     return (
       <div style={{ textAlign: 'center', padding: '1.5rem 0' }}>
         <div style={{ fontSize: '28px' }}>✓</div>
-        <p style={{ fontWeight: 500, margin: '8px 0 4px' }}>¡Gracias por confirmar, {data.name || 'invitado'}!</p>
-        <p style={{ fontSize: '13px', color: '#5f5e5a', margin: 0 }}>{summary}</p>
+        <p style={{ fontWeight: 500, margin: '8px 0 4px' }}>¡Gracias por confirmar, {data.name}!</p>
+        <p style={{ fontSize: '13px', color: '#5f5e5a', margin: 0 }}>{msg}</p>
+      </div>
+    )
+  }
+
+  if (status === 'duplicate') {
+    return (
+      <div style={{ textAlign: 'center', padding: '1.5rem 0' }}>
+        <div style={{ fontSize: '28px' }}>📋</div>
+        <p style={{ fontWeight: 500, margin: '8px 0 4px' }}>¡Ya estás registrado, {data.name}!</p>
+        <p style={{ fontSize: '13px', color: '#5f5e5a', margin: 0 }}>
+          Tu confirmación ya fue recibida anteriormente. ¡Te esperamos!
+        </p>
+      </div>
+    )
+  }
+
+  if (status === 'error') {
+    return (
+      <div style={{ textAlign: 'center', padding: '1.5rem 0' }}>
+        <div style={{ fontSize: '28px' }}>⚠️</div>
+        <p style={{ fontWeight: 500, margin: '8px 0 4px' }}>Ocurrió un error</p>
+        <p style={{ fontSize: '13px', color: '#5f5e5a', margin: 0 }}>
+          Por favor intenta de nuevo o contacta a los novios.
+        </p>
+        <button
+          onClick={() => setStatus('idle')}
+          style={{ marginTop: '12px', padding: '8px 20px', borderRadius: '8px', border: '1px solid #d3d1c7', background: 'transparent', cursor: 'pointer' }}
+        >
+          Intentar de nuevo
+        </button>
       </div>
     )
   }
@@ -86,7 +131,6 @@ export default function RsvpForm({ guestCount = 1 }) {
         <option value="no">No podré asistir</option>
       </select>
 
-      {/* Esta pregunta solo aparece cuando la invitación es para 2 personas */}
       {guestCount === 2 && data.attend === 'si' && (
         <>
           <label style={{ fontSize: '13px', color: '#5f5e5a', display: 'block', marginBottom: '4px' }}>
