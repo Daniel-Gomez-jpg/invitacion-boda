@@ -2,13 +2,17 @@ import React, { useState } from 'react'
 
 const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxkwcGa-B9KF3Fo9J4sx0-QPogUAvkgCqO--Y-5twpftlDxU1nZcCPxXI6ntT1odogdHQ/exec'
 
+function primerNombre(nombre) {
+  const primero = nombre.trim().split(/\s+/)[0]
+  return primero.charAt(0).toUpperCase() + primero.slice(1).toLowerCase()
+}
+
 export default function RsvpForm({ guestCount = 1 }) {
   const [status, setStatus] = useState('idle') // idle | loading | ok | duplicate | error
   const [data, setData] = useState({
     name: '',
     attend: 'si',
-    bringsCompanion: 'si',
-    diet: '',
+    bringsCompanion: 'si'
   })
 
   const handleChange = (field) => (e) => {
@@ -20,13 +24,17 @@ export default function RsvpForm({ guestCount = 1 }) {
   setStatus('loading')
 
   try {
+    // Si no asiste, el acompañante también es "no" automáticamente
+    const companion = data.attend !== 'si' 
+      ? 'no' 
+      : guestCount === 2 ? data.bringsCompanion : 'N/A'
+
     const params = new URLSearchParams({
       action: 'register',
       name: data.name,
       attend: data.attend,
-      companion: guestCount === 2 ? data.bringsCompanion : 'N/A',
-      diet: data.diet || '',
-      guestCount: guestCount,
+      companion,
+      guestCount,
     })
 
     const response = await fetch(`${APPS_SCRIPT_URL}?${params.toString()}`)
@@ -57,14 +65,14 @@ export default function RsvpForm({ guestCount = 1 }) {
 
   if (status === 'ok') {
     const msg = data.attend !== 'si'
-      ? 'Lamentamos que no puedas acompañarnos.'
+      ? 'Lamentamos que no puedas acompañarnos. ¡Gracias por tu confirmación!'
       : guestCount === 2 && data.bringsCompanion === 'si'
         ? 'Te esperamos junto a tu acompañante.'
         : 'Te esperamos en nuestra boda.'
     return (
       <div style={{ textAlign: 'center', padding: '1.5rem 0' }}>
         <div style={{ fontSize: '28px' }}>✓</div>
-        <p style={{ fontWeight: 500, margin: '8px 0 4px' }}>¡Gracias por confirmar, {data.name}!</p>
+        <p style={{ fontWeight: 500, margin: '8px 0 4px' }}>¡Gracias por confirmar, {primerNombre(data.name)}!</p>
         <p style={{ fontSize: '13px', color: '#5f5e5a', margin: 0 }}>{msg}</p>
       </div>
     )
@@ -74,9 +82,9 @@ export default function RsvpForm({ guestCount = 1 }) {
     return (
       <div style={{ textAlign: 'center', padding: '1.5rem 0' }}>
         <div style={{ fontSize: '28px' }}>📋</div>
-        <p style={{ fontWeight: 500, margin: '8px 0 4px' }}>¡Ya estás registrado, {data.name}!</p>
+        <p style={{ fontWeight: 500, margin: '8px 0 4px' }}>¡Ya estás registrado, {primerNombre(data.name)}!</p>
         <p style={{ fontSize: '13px', color: '#5f5e5a', margin: 0 }}>
-          Tu confirmación ya fue recibida anteriormente. ¡Te esperamos!
+          Tu confirmación ya fue recibida anteriormente. ¡Gracias!
         </p>
       </div>
     )
