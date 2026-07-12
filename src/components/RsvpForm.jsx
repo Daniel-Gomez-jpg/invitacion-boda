@@ -16,36 +16,28 @@ export default function RsvpForm({ guestCount = 1 }) {
   }
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
-    setStatus('loading')
+  e.preventDefault()
+  setStatus('loading')
 
-    try {
-      await fetch(APPS_SCRIPT_URL, {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          name: data.name,
-          attend: data.attend,
-          bringsCompanion: guestCount === 2 ? data.bringsCompanion : null,
-          diet: data.diet,
-          guestCount,
-        }),
-      })
+  try {
+    const response = await fetch(APPS_SCRIPT_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'text/plain' },
+      body: JSON.stringify({
+        name: data.name,
+        attend: data.attend,
+        bringsCompanion: guestCount === 2 ? data.bringsCompanion : null,
+        guestCount,
+      }),
+    })
 
-      // Con no-cors no podemos leer la respuesta, así que verificamos
-      // consultando de nuevo si el nombre ya quedó registrado
-      const check = await fetch(
-        `${APPS_SCRIPT_URL}?action=check&name=${encodeURIComponent(data.name)}`
-      )
-      const result = await check.json()
+    const result = await response.json()
+    setStatus(result.status === 'duplicate' ? 'duplicate' : 'ok')
 
-      setStatus(result.status === 'duplicate' ? 'duplicate' : 'ok')
-
-    } catch (err) {
-      setStatus('error')
-    }
+  } catch (err) {
+    setStatus('error')
   }
+}
 
   const inputStyle = {
     width: '100%',
