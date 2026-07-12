@@ -20,17 +20,16 @@ export default function RsvpForm({ guestCount = 1 }) {
   setStatus('loading')
 
   try {
-    const response = await fetch(APPS_SCRIPT_URL, {
-      method: 'POST',
-      headers: { 'Content-Type': 'text/plain' },
-      body: JSON.stringify({
-        name: data.name,
-        attend: data.attend,
-        bringsCompanion: guestCount === 2 ? data.bringsCompanion : null,
-        guestCount,
-      }),
+    const params = new URLSearchParams({
+      action: 'register',
+      name: data.name,
+      attend: data.attend,
+      companion: guestCount === 2 ? data.bringsCompanion : 'N/A',
+      diet: data.diet || '',
+      guestCount: guestCount,
     })
 
+    const response = await fetch(`${APPS_SCRIPT_URL}?${params.toString()}`)
     const result = await response.json()
     setStatus(result.status === 'duplicate' ? 'duplicate' : 'ok')
 
