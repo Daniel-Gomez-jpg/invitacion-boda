@@ -1,0 +1,230 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Jost', sans-serif;
+  background: #f3efe8;
+  color: #2c2c2a;
+  -webkit-font-smoothing: antialiased;
+}
+
+.serif {
+  font-family: 'Cormorant Garamond', serif;
+}
+
+input, select, button {
+  font-family: 'Jost', sans-serif;
+  font-size: 14px;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* ====== Layout ====== */
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 2rem 1rem;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.page.centered {
+  align-items: center;
+}
+
+.page-inner {
+  max-width: 560px;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+/* Una sola tarjeta blanca que contiene toda la invitación, incluido el formulario */
+.invite-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 16px 40px rgba(60, 52, 30, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+.invite-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* Hojas decorativas dentro de los márgenes de la tarjeta blanca */
+.botanical-margin {
+  position: absolute;
+  z-index: 0;
+  width: 110px;
+  height: auto;
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+.botanical-margin-tr {
+  top: -10px;
+  right: -10px;
+  transform: scaleX(-1);
+}
+
+.botanical-margin-bl {
+  bottom: -75px;
+  left: -70px;
+  transform: scaleX(-1) rotate(180deg);
+}
+
+@media (min-width: 700px) {
+  .botanical-margin {
+    width: 150px;
+  }
+}
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-bottom: 1.5rem;
+}
+
+.gift-card {
+  background: #faf9f5;
+  border-radius: 12px;
+  border: 1px solid #ece8de;
+  padding: 1.25rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+/* Sección de detalles: ceremonia / recepción / código de vestimenta.
+   Solo borde, fondo blanco, tipografía serif más elegante. */
+.details-card {
+  background: #ffffff;
+  border: 1px solid #ddd8c8;
+  border-radius: 14px;
+  padding: 1.75rem 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.detail-block {
+  text-align: center;
+}
+
+.detail-divider {
+  height: 1px;
+  background: #ece8de;
+  margin: 1.5rem auto;
+  width: 60%;
+}
+
+.detail-title {
+  font-size: 19px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  margin: 8px 0 6px;
+  color: #2c2c2a;
+}
+
+.detail-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 16px;
+  color: #5f5e5a;
+  margin: 2px 0;
+  line-height: 1.5;
+}
+
+.detail-hour {
+  font-style: italic;
+}
+
+.dress-code-row {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+
+.dress-code-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 160px;
+}
+
+.dress-code-col .detail-text {
+  margin-top: 6px;
+}
+
+.rsvp-section {
+  border-top: 1px solid #ece8de;
+  padding-top: 1.5rem;
+}
+
+/* Tablet y escritorio: invitación más ancha y con más aire */
+@media (min-width: 700px) {
+  .page-inner {
+    max-width: 680px;
+  }
+  .invite-card {
+    padding: 3rem 3.5rem;
+  }
+  .photo-grid {
+    gap: 14px;
+  }
+  h1.title {
+    font-size: 42px !important;
+  }
+}
+
+@media (min-width: 1100px) {
+  .page-inner {
+    max-width: 760px;
+  }
+}
+
+/* ====== Decoración floral de fondo ====== */
+/* Capa fija que cubre toda la pantalla, detrás de la tarjeta (z-index 0), siempre visible */
+.botanical-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.botanical {
+  position: absolute;
+  width: 130px;
+  height: auto;
+}
+
+.botanical-tl {
+  top: 0;
+  left: 0;
+}
+
+.botanical-br {
+  bottom: 0;
+  right: 0;
+}
+
+@media (min-width: 700px) {
+  .botanical {
+    width: 200px;
+  }
+}
+
+@media (min-width: 1100px) {
+  .botanical {
+    width: 260px;
+  }
+}
