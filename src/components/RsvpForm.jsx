@@ -58,7 +58,7 @@ export default function RsvpForm({ guestCount = 1 }) {
   if (status === 'loading') {
     return (
       <div style={{ textAlign: 'center', padding: '1.5rem 0' }}>
-        <p style={{ color: '#5f5e5a', fontSize: '14px' }}>Enviando confirmación...</p>
+        <p style={{ color: '#785353', fontFamily: '"Cormorant Upright", serif', fontSize: '14px' }}>Enviando confirmación...</p>
       </div>
     )
   }
@@ -71,9 +71,9 @@ export default function RsvpForm({ guestCount = 1 }) {
         : 'Te esperamos en nuestra boda.'
     return (
       <div style={{ textAlign: 'center', padding: '1.5rem 0' }}>
-        <div style={{ fontSize: '28px' }}>✓</div>
+        <div style={{ fontFamily: '"Cormorant Upright", serif', fontSize: '28px' }}>✓</div>
         <p style={{ fontWeight: 500, margin: '8px 0 4px' }}>¡Gracias por confirmar, {primerNombre(data.name)}!</p>
-        <p style={{ fontSize: '13px', color: '#5f5e5a', margin: 0 }}>{msg}</p>
+        <p style={{ fontFamily: '"Cormorant Upright", serif', fontSize: '13px', color: '#785353', margin: 0 }}>{msg}</p>
       </div>
     )
   }
@@ -81,9 +81,9 @@ export default function RsvpForm({ guestCount = 1 }) {
   if (status === 'duplicate') {
     return (
       <div style={{ textAlign: 'center', padding: '1.5rem 0' }}>
-        <div style={{ fontSize: '28px' }}>📋</div>
+        <div style={{ fontFamily: '"Cormorant Upright", serif', fontSize: '28px' }}>📋</div>
         <p style={{ fontWeight: 500, margin: '8px 0 4px' }}>¡Ya estás registrado, {primerNombre(data.name)}!</p>
-        <p style={{ fontSize: '13px', color: '#5f5e5a', margin: 0 }}>
+        <p style={{ fontFamily: '"Cormorant Upright", serif', fontSize: '13px', color: '#785353', margin: 0 }}>
           Tu confirmación ya fue recibida anteriormente. ¡Gracias!
         </p>
       </div>
@@ -93,9 +93,9 @@ export default function RsvpForm({ guestCount = 1 }) {
   if (status === 'error') {
     return (
       <div style={{ textAlign: 'center', padding: '1.5rem 0' }}>
-        <div style={{ fontSize: '28px' }}>⚠️</div>
+        <div style={{ fontFamily: '"Cormorant Upright", serif', fontSize: '28px' }}>⚠️</div>
         <p style={{ fontWeight: 500, margin: '8px 0 4px' }}>Ocurrió un error</p>
-        <p style={{ fontSize: '13px', color: '#5f5e5a', margin: 0 }}>
+        <p style={{ fontFamily: '"Cormorant Upright", serif', fontSize: '13px', color: '#785353', margin: 0 }}>
           Por favor intenta de nuevo o contacta a los novios.
         </p>
         <button
@@ -110,7 +110,7 @@ export default function RsvpForm({ guestCount = 1 }) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <label style={{ fontSize: '13px', color: '#5f5e5a', display: 'block', marginBottom: '4px' }}>
+      <label style={{ fontFamily: '"Cormorant Upright", serif', fontSize: '13px', color: '#785353', display: 'block', marginBottom: '4px' }}>
         Nombre completo
       </label>
       <input
@@ -122,7 +122,7 @@ export default function RsvpForm({ guestCount = 1 }) {
         style={inputStyle}
       />
 
-      <label style={{ fontSize: '13px', color: '#5f5e5a', display: 'block', marginBottom: '4px' }}>
+      <label style={{ fontFamily: '"Cormorant Upright", serif', fontSize: '13px', color: '#785353', display: 'block', marginBottom: '4px' }}>
         ¿Asistirás?
       </label>
       <select value={data.attend} onChange={handleChange('attend')} style={inputStyle}>
@@ -132,7 +132,7 @@ export default function RsvpForm({ guestCount = 1 }) {
 
       {guestCount === 2 && data.attend === 'si' && (
         <>
-          <label style={{ fontSize: '13px', color: '#5f5e5a', display: 'block', marginBottom: '4px' }}>
+          <label style={{ fontFamily: '"Cormorant Upright", serif', fontSize: '13px', color: '#785353', display: 'block', marginBottom: '4px' }}>
             ¿Llevarás a tu acompañante?
           </label>
           <select value={data.bringsCompanion} onChange={handleChange('bringsCompanion')} style={inputStyle}>

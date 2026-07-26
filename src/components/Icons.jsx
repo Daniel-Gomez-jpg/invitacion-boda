@@ -81,3 +81,24 @@ export function GiftIcon({ style, className, animate = false }) {
     </>
   )
 }
+
+export function BoyIcon(){
+  return(
+    <>
+    <svg width="44" height="44" viewBox="0 0 44 44" aria-hidden="true" style={{ margin: '0 auto 4px' }}>
+                      <g fill="none" stroke="#785353" strokeWidth="1.5" strokeLinecap="round">
+                        {/* Silueta de niño */}
+                        <circle cx="22" cy="10" r="5" />
+                        <path d="M15 22 C15 16, 29 16, 29 22 L27 34 L22 31 L17 34 Z" />
+                        <path d="M17 34 L15 42" />
+                        <path d="M27 34 L29 42" />
+                        <path d="M15 24 L9 28" />
+                        <path d="M29 24 L35 28" />
+                        {/* Círculo prohibido */}
+                        <circle cx="22" cy="22" r="19" stroke="#785353" strokeWidth="1.6" />
+                        {/* <line x1="6" y1="6" x2="38" y2="38" stroke="#785353" strokeWidth="1.6" /> */}
+                      </g>
+                    </svg>
+    </>
+  )
+}

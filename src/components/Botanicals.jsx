@@ -56,13 +56,33 @@ export function CornerFlourishBottomRight({ style, className }) {
 export function OrnateDivider({ style, className }) {
   return (
     <svg width="220" height="40" viewBox="0 0 220 40" style={style} className={className} aria-hidden="true">
-      <g fill="none" stroke={stroke} strokeWidth="1.4" opacity="0.8">
+      <g fill="none" stroke="#364573" strokeWidth="1.4" opacity="0.8">
         <path d="M6 20 C 40 8, 70 8, 96 20" />
         <path d="M124 20 C 150 8, 180 8, 214 20" />
-        <path d="M104 28 C 107 22, 113 22, 116 28 C 119 22, 125 22, 128 28 C 128 33, 116 38, 110 38 C 104 38, 104 33, 104 28 Z" fill={fillLeaf} />
+        {/* Corazón centrado en x=110 */}
+        <path
+          d="M110 38 C 98 30, 96 22, 103 19 C 107 17, 110 20, 110 20 C 110 20, 113 17, 117 19 C 124 22, 122 30, 110 38 Z"
+          fill="#D8B4AF"
+          stroke="#364573"
+          strokeWidth="1"
+        />
       </g>
       <g transform="translate(40,18)"><LeafCluster rotate="0" scale="0.45" /></g>
       <g transform="translate(180,18)"><LeafCluster rotate="180" scale="0.45" /></g>
+    </svg>
+  )
+}
+
+export function SimpleDivider({ style, className }) {
+  return (
+    <svg width="220" height="24" viewBox="0 0 220 24" style={style} className={className} aria-hidden="true">
+      <g fill="none" stroke="#364573" strokeWidth="1.4" opacity="0.8">
+        <path d="M6 12 C 40 2, 70 2, 100 12" />
+        <path d="M120 12 C 150 2, 180 2, 214 12" />
+        <circle cx="110" cy="12" r="3" fill="#D8B4AF" stroke="#364573" strokeWidth="1" />
+      </g>
+      <g transform="translate(40,11)"><LeafCluster rotate="0" scale="0.45" /></g>
+      <g transform="translate(180,11)"><LeafCluster rotate="180" scale="0.45" /></g>
     </svg>
   )
 }

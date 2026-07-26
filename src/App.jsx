@@ -3,8 +3,8 @@ import Envelope from './components/Envelope.jsx'
 import PhotoSlot from './components/PhotoSlot.jsx'
 import RsvpForm from './components/RsvpForm.jsx'
 import Reveal from './components/Reveal.jsx'
-import { CornerFlourishTopLeft, CornerFlourishBottomRight, OrnateDivider } from './components/Botanicals.jsx'
-import { RingsIcon, TuxedoIcon, DressIcon, GiftIcon } from './components/Icons.jsx'
+import { CornerFlourishTopLeft, CornerFlourishBottomRight, OrnateDivider, SimpleDivider } from './components/Botanicals.jsx'
+import { RingsIcon, TuxedoIcon, DressIcon, GiftIcon, BoyIcon } from './components/Icons.jsx'
 import useInView from './hooks/useInView.js'
 
 /**
@@ -80,8 +80,8 @@ function GiftSection() {
       <div ref={giftRef}>
         <GiftIcon animate={giftAnimate} style={{ marginBottom: '6px' }} />
       </div>
-      <p style={{ fontWeight: 500, margin: '8px 0 4px' }}>Sobre de regalo</p>
-      <p style={{ fontSize: '13px', color: '#5f5e5a', margin: 0, lineHeight: 1.6 }}>
+      <p style={{ fontWeight: 500, margin: '8px 0 4px', fontFamily: '"Cormorant Upright", serif', fontSize: '22px', color: '#785353'}}>Regalo de sobre</p>
+      <p style={{ fontFamily: '"Cormorant Upright", serif', fontSize: '13px', color: '#364573', margin: 0, lineHeight: 1.6 }}>
         Tu presencia es nuestro mejor regalo. Si deseas tener un detalle con nosotros,
         agradecemos de corazón un sobre con tu contribución el día del evento.
       </p>
@@ -126,17 +126,55 @@ const [giftAnimate, setGiftAnimate] = useState(false)
 
               <Reveal effect="fade" delay={0.1}>
                 <div style={{ textAlign: 'center' }}>
-                  <p className="serif" style={{ fontSize: '13px', letterSpacing: '2px', color: '#5f5e5a', margin: '20px 0 4px' }}>
-                    NOS CASAMOS
+                  <p className="serif" style={{ fontFamily: '"Cormorant Upright", serif', fontSize: '16px', letterSpacing: '2px', color: '#785353', margin: '25px 0 4px' }}>
+                    ¡NOS CASAMOS!
                   </p>
-                  <h1 className="serif title" style={{ fontSize: '34px', fontWeight: 'bold', margin: '0 0 8px', color:'#000080' }}>
+                  <h1 className="serif title" style={{ fontFamily: '"Cormorant Upright", serif', fontSize: '34px', fontWeight: 'bold', margin: '0 0 8px', color:'#000080' }}>
                     {EVENTO.novios}
                   </h1>
-                  <p style={{ fontSize: '15px', color: '#5f5e5a', margin: '0 0 4px' }}>{EVENTO.fecha}</p>
+                  <p style={{ fontFamily: '"Cormorant Upright", serif', fontSize: '15px', color: '#785353', margin: '0 0 4px' }}>{EVENTO.fecha}</p>
 
                   <OrnateDivider style={{ margin: '4px auto 22px', display: 'block' }} />
                 </div>
               </Reveal>
+
+              <Reveal effect="fade" delay={0.15}>
+  <div style={{ textAlign: 'center', margin: '0 0 30px' }}>
+    <p style={{
+      fontFamily: '"Cormorant Upright", serif', fontSize: '18px',
+      color: '#785353',
+      letterSpacing: '1px',
+      margin: '0 0 12px',
+      fontStyle: 'italic',
+    }}>
+      Con la bendición de Dios y de nuestros padres
+    </p>
+
+    {/* Padres novio */}
+    <p className="serif" style={{ fontFamily: '"Cormorant Upright", serif', fontSize: '25px', fontWeight: '500', color: '#3D4D85', margin: 0, lineHeight: 1.5 }}>
+      Napoleón Gómez
+    </p>
+    <p className="serif" style={{ fontFamily: '"Cormorant Upright", serif', fontSize: '25px', fontWeight: '500', color: '#3D4D85', margin: 0, lineHeight: 1.5 }}>
+      Emma del Rosario de Gómez
+    </p>
+
+    {/* Separador */}
+    <p style={{ fontFamily: '"Cormorant Upright", serif', fontSize: '22px', color: '#8a8367', margin: '10px 0', letterSpacing: '2px' }}>&amp;</p>
+
+    {/* Padres novia */}
+    <p className="serif" style={{ fontFamily: '"Cormorant Upright", serif', fontSize: '25px', fontWeight: '500', color: '#3D4D85', margin: 0, lineHeight: 1.5 }}>
+      Adonay Mancía
+    </p>
+    <p className="serif" style={{ fontFamily: '"Cormorant Upright", serif', fontSize: '25px', fontWeight: '500', color: '#3D4D85', margin: 0, lineHeight: 1.5, marginBottom: "20px" }}>
+      Thelma de Mancía
+    </p>
+    
+  <SimpleDivider style={{ margin: '0 auto 16px', display: 'block' }} />
+    
+  </div>
+</Reveal>
+
+    
 
               <Reveal effect="fade" delay={0.15}>
                 <div className="photo-grid">
@@ -146,39 +184,82 @@ const [giftAnimate, setGiftAnimate] = useState(false)
                 </div>
               </Reveal>
 
+              <div style={{ margin: '20px auto 20px', maxWidth: '420px' }}> 
+      <p style={{
+        fontFamily: '"Cormorant Upright", serif',
+        fontSize: '18px',
+        fontWeight: '300',
+        color: '#5f5e5a',
+        fontStyle: 'italic',
+        lineHeight: 1.8,
+        margin: '0 0 10px',
+        letterSpacing: '0.3px',
+      }}>
+        "El que halló esposa halló el bien, y alcanzó la benevolencia del Señor."
+      </p>
+      <p style={{
+        fontFamily: '"Cormorant Upright", serif',
+        fontSize: '15px',
+        fontWeight: '400',
+        color: '#3D4D85',
+        margin: 0,
+        letterSpacing: '1px',
+      }}>
+        — Proverbios 18:22
+      </p>
+    </div>
+
               {/* Sección de detalles: ceremonia, recepción y código de vestimenta */}
               <Reveal effect="slide-left" delay={0.05}>
                 <div className="details-card" style={{backgroundColor:'#fffafaaf'}}>
                   <div className="detail-block">
                     <RingsIcon />
-                    <h4 className="serif detail-title">Ceremonia</h4>
-                    <p className="detail-text" style={{fontSize:'32px'}}>{EVENTO.ceremonia.lugar}</p>
-                    <p className="detail-text detail-hour" >{EVENTO.ceremonia.hora}</p>
+                    <h4 style={{color: '#785353', fontWeight: '600', fontSize: '22px'}} className="serif detail-title">Ceremonia</h4>
+                    <p className="detail-text" style={{fontFamily: '"Cormorant Upright", serif', fontSize:'32px', color: '#364573'}}>{EVENTO.ceremonia.lugar}</p>
+                    <p className="detail-text detail-hour" style={{fontSize: '22px', color: '#364573'}} >{EVENTO.ceremonia.hora}</p>
                   </div>
 
                   <div className="detail-divider" />
 
                   <div className="detail-block">
                     <RingsIcon />
-                    <h4 className="serif detail-title">Recepción</h4>
-                    <p className="detail-text">{EVENTO.recepcion.lugar}</p>
-                    <p className="detail-text detail-hour">{EVENTO.recepcion.hora}</p>
+                    <h4 style={{color: '#785353', fontWeight: '600', fontSize: '22px'}} className="serif detail-title">Recepción</h4>
+                    <p className="detail-text"  style={{fontFamily: '"Cormorant Upright", serif', fontSize:'32px', color: '#364573'}} >{EVENTO.recepcion.lugar}</p>
+                    <p className="detail-text detail-hour" style={{fontSize:'22px', color: '#364573'}}>{EVENTO.recepcion.hora}</p>
                   </div>
 
                   <div className="detail-divider" />
 
                   <div className="detail-block">
-                    <h4 className="serif detail-title">Código de vestimenta — {EVENTO.vestimenta.titulo}</h4>
+                    <h4 style={{color: '#785353', fontWeight: '600', fontSize: '22px'}} className="serif detail-title">Código de vestimenta — {EVENTO.vestimenta.titulo}</h4>
                     <div className="dress-code-row">
                       <div className="dress-code-col">
                         <TuxedoIcon />
-                        <p className="detail-text">{EVENTO.vestimenta.hombres}</p>
+                        <p className="detail-text" style={{fontFamily: '"Cormorant Upright", serif', color: '#364573'}}>{EVENTO.vestimenta.hombres}</p>
                       </div>
                       <div className="dress-code-col">
                         <DressIcon />
-                        <p className="detail-text">{EVENTO.vestimenta.mujeres}</p>
+                        <p className="detail-text" style={{fontFamily: '"Cormorant Upright", serif', color: '#364573'}}>{EVENTO.vestimenta.mujeres}</p>
                       </div>
                     </div>
+                  </div>
+                  <div className="detail-divider" />
+
+                  <div className="detail-block">
+                    <BoyIcon/>
+                    <h4 style={{ color: '#785353', fontWeight: '600', fontSize: '22px' }} className="serif detail-title">
+                      Evento solo para adultos
+                    </h4>
+                    <p style={{
+                      fontFamily: '"Cormorant Upright", serif',
+                      fontSize: '17px',
+                      color: '#364573',
+                      margin: '4px 0 0',
+                      lineHeight: 1.6,
+                      fontStyle: 'italic',
+                    }}>
+                      Con todo el cariño, les pedimos que esta celebración sea un espacio exclusivo para adultos. Agradecemos su comprensión.
+                    </p>
                   </div>
                 </div>
               </Reveal>
@@ -186,13 +267,13 @@ const [giftAnimate, setGiftAnimate] = useState(false)
               <Reveal effect="slide-right" delay={0.1}>
                 <GiftSection />
               </Reveal>
-
+                <SimpleDivider style={{ margin: '0 auto 16px', display: 'block' }} />
               <Reveal effect="slide-up" delay={0.15}>
                 <div className="rsvp-section">
-                  <h3 className="serif" style={{ margin: '0 0 4px', textAlign: 'center', fontSize: '22px' }}>
+                  <h3 className="serif" style={{ margin: '0 0 4px', textAlign: 'center', fontFamily: '"Cormorant Upright", serif', fontSize: '22px', color: '#785353' }}>
                     Confirma tu asistencia
                   </h3>
-                  <p style={{ fontSize: '13px', color: '#5f5e5a', textAlign: 'center', margin: '0 0 1.25rem' }}>
+                  <p style={{ fontFamily: '"Cormorant Upright", serif', fontSize: '13px', color: '#5f5e5a', textAlign: 'center', margin: '0 0 1.25rem' }}>
                     Por favor confirma antes del {EVENTO.fechaLimiteRsvp}
                   </p>
                   <RsvpForm guestCount={guestCount} />
