@@ -19,7 +19,8 @@ export default function Envelope({ onOpen }) {
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        background: 'linear-gradient(160deg, #f8f6f0 0%, #eee8da 100%)',
+        //background: 'linear-gradient(160deg, #f8f6f0 0%, #eee8da 100%)',
+        background: '#364573',
         borderRadius: '20px',
         cursor: 'pointer',
         userSelect: 'none',
@@ -43,7 +44,8 @@ export default function Envelope({ onOpen }) {
           alignItems: 'center',
         }}
       >
-        <svg width="260" height="190" viewBox="0 0 260 190" aria-hidden="true">
+        <img src="https://invitacion.celebremos.click/wp-content/uploads/2025/07/SobreB.png" alt="sobre" style={{maxWidth: '300px', clipPath: `inset(0 0 20px 0)`}}  />
+        {/* <svg width="260" height="190" viewBox="0 0 260 190" aria-hidden="true">
           <defs>
             <filter id="envShadow" x="-25%" y="-25%" width="150%" height="150%">
               <feDropShadow dx="0" dy="12" stdDeviation="14" floodColor="#1a2240" floodOpacity="0.32" />
@@ -101,12 +103,12 @@ export default function Envelope({ onOpen }) {
               G&amp;J
             </text>
           </g>
-        </svg>
+        </svg> */}
 
         <p className="serif" style={{
           fontSize: '16px',
           marginTop: '20px',
-          color: '#3D4D85',
+          color: 'white',
           letterSpacing: '0.5px',
           opacity: 0.85,
         }}>
@@ -114,9 +116,9 @@ export default function Envelope({ onOpen }) {
         </p>
 
         <svg width="100" height="16" viewBox="0 0 100 16" style={{ marginTop: '4px', opacity: 0.4 }} aria-hidden="true">
-          <line x1="0" y1="8" x2="38" y2="8" stroke="#3D4D85" strokeWidth="0.8" />
-          <circle cx="50" cy="8" r="3" fill="#3D4D85" />
-          <line x1="62" y1="8" x2="100" y2="8" stroke="#3D4D85" strokeWidth="0.8" />
+          <line x1="0" y1="8" x2="38" y2="8" stroke="white" strokeWidth="0.8" />
+          <circle cx="50" cy="8" r="3" fill="white" />
+          <line x1="62" y1="8" x2="100" y2="8" stroke="white" strokeWidth="0.8" />
         </svg>
       </div>
 

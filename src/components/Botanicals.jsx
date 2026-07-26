@@ -22,15 +22,15 @@ function LeafCluster({ rotate = 0, scale = 1 }) {
 export function CornerFlourishTopLeft({ style, className }) {
   return (
     <svg width="220" height="220" viewBox="0 0 220 220" style={style} className={className} aria-hidden="true">
-      <g fill="none" stroke={stroke} strokeWidth="1.6" strokeLinecap="round" opacity="0.7">
+      <g fill="none" stroke="white" strokeWidth="1.6" strokeLinecap="round" opacity="0.7">
         <path d="M4 100 C 10 60, 40 14, 100 6" />
         <path d="M20 96 C 26 64, 50 30, 96 22" />
       </g>
-      <g opacity="0.85">
-        <g transform="translate(14,92)"><LeafCluster rotate="-40" scale="0.8" /></g>
-        <g transform="translate(38,58)"><LeafCluster rotate="-15" scale="0.9" /></g>
-        <g transform="translate(70,30)"><LeafCluster rotate="20" scale="0.85" /></g>
-        <g transform="translate(102,14)"><LeafCluster rotate="55" scale="0.75" /></g>
+      <g opacity="0.85" stroke='white'>
+        <g transform="translate(14,92)"><LeafCluster  stroke='white' rotate="-40" scale="0.8" /></g>
+        <g transform="translate(38,58)"><LeafCluster  stroke='white' rotate="-15" scale="0.9" /></g>
+        <g transform="translate(70,30)"><LeafCluster  stroke='white' rotate="20" scale="0.85" /></g>
+        <g transform="translate(102,14)"><LeafCluster stroke='white'  rotate="55" scale="0.75" /></g>
       </g>
     </svg>
   )
@@ -39,7 +39,7 @@ export function CornerFlourishTopLeft({ style, className }) {
 export function CornerFlourishBottomRight({ style, className }) {
   return (
     <svg width="220" height="220" viewBox="0 0 220 220" style={style} className={className} aria-hidden="true">
-      <g fill="none" stroke={stroke} strokeWidth="1.6" strokeLinecap="round" opacity="0.7">
+      <g fill="none" stroke="white" strokeWidth="1.6" strokeLinecap="round" opacity="0.7">
         <path d="M216 120 C 210 160, 180 206, 120 214" />
         <path d="M200 124 C 194 156, 170 190, 124 198" />
       </g>
