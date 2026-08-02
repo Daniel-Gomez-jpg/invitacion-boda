@@ -236,11 +236,11 @@ const [giftAnimate, setGiftAnimate] = useState(false)
                     <div className="dress-code-row">
                       <div className="dress-code-col">
                         <TuxedoIcon />
-                        <p className="detail-text" style={{fontFamily: '"Cormorant Upright", serif', color: '#364573'}}>{EVENTO.vestimenta.hombres}</p>
+                        <p className="detail-text" style={{fontFamily: '"Cormorant Upright", serif', color: '#364573', fontSize:'17px'}}>{EVENTO.vestimenta.hombres}</p>
                       </div>
                       <div className="dress-code-col">
                         <DressIcon />
-                        <p className="detail-text" style={{fontFamily: '"Cormorant Upright", serif', color: '#364573'}}>{EVENTO.vestimenta.mujeres}</p>
+                        <p className="detail-text" style={{fontFamily: '"Cormorant Upright", serif', color: '#364573', fontSize:'17px'}}>{EVENTO.vestimenta.mujeres}</p>
                       </div>
                     </div>
                   </div>
