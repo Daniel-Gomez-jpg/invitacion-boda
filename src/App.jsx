@@ -76,7 +76,7 @@ function GiftSection() {
   }, [giftInView])
 
   return (
-    <div className="gift-card" style={{backgroundColor:'rgb(244 227 227 / 69%)'}}>
+    <div className="gift-card" style={{backgroundColor:'rgb(235 223 223 / 69%)'}}>
       <div ref={giftRef}>
         <GiftIcon animate={giftAnimate} style={{ marginBottom: '6px' }} />
       </div>
@@ -212,7 +212,7 @@ const [giftAnimate, setGiftAnimate] = useState(false)
 
               {/* Sección de detalles: ceremonia, recepción y código de vestimenta */}
               <Reveal effect="slide-left" delay={0.05}>
-                <div className="details-card" style={{backgroundColor:'rgb(244 227 227 / 69%)'}}>
+                <div className="details-card" style={{backgroundColor:'rgb(235 223 223 / 69%)'}}>
                   <div className="detail-block">
                     <RingsIcon />
                     <h4 style={{color: '#E1B3B9', fontWeight: '600', fontSize: '22px'}} className="serif detail-title">Ceremonia</h4>
