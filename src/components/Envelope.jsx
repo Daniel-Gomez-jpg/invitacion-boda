@@ -44,7 +44,7 @@ export default function Envelope({ onOpen, guests }) {
           alignItems: 'center',
         }}
       >
-        <img src="/fotos/envelope4k.png" alt="sobre" style={{maxWidth: '400px'/* , clipPath: `inset(0 0 20px 0)` */}}  />
+        <img src="/fotos/envelope4k.png" alt="sobre" style={{maxWidth: '300px'/* , clipPath: `inset(0 0 20px 0)` */}}  />
         {/* <svg width="260" height="190" viewBox="0 0 260 190" aria-hidden="true">
           <defs>
             <filter id="envShadow" x="-25%" y="-25%" width="150%" height="150%">
