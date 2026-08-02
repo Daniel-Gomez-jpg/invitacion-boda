@@ -4,7 +4,7 @@ import PhotoSlot from './components/PhotoSlot.jsx'
 import RsvpForm from './components/RsvpForm.jsx'
 import Reveal from './components/Reveal.jsx'
 import { CornerFlourishTopLeft, CornerFlourishBottomRight, OrnateDivider, SimpleDivider } from './components/Botanicals.jsx'
-import { RingsIcon, TuxedoIcon, DressIcon, GiftIcon, BoyIcon } from './components/Icons.jsx'
+import { RingsIcon, TuxedoIcon, DressIcon, GiftIcon, BoyIcon, ToastIcon } from './components/Icons.jsx'
 import useInView from './hooks/useInView.js'
 
 /**
@@ -35,7 +35,7 @@ const EVENTO = {
  * Ejemplo: "/fotos/principal.jpg". Déjalo en null para mostrar el marcador.
  */
 const FOTOS = {
-  principal: null,
+  principal: "/fotos/couple-main.jpeg",
   foto2: null,
   foto3: null,
   foto4: null,
@@ -76,13 +76,13 @@ function GiftSection() {
   }, [giftInView])
 
   return (
-    <div className="gift-card" style={{backgroundColor:'#fffafaaf'}}>
+    <div className="gift-card" style={{backgroundColor:'rgb(244 227 227 / 69%)'}}>
       <div ref={giftRef}>
         <GiftIcon animate={giftAnimate} style={{ marginBottom: '6px' }} />
       </div>
-      <p style={{ fontWeight: 500, margin: '8px 0 4px', fontFamily: '"Cormorant Upright", serif', fontSize: '22px', color: '#785353'}}>Regalo de sobre</p>
-      <p style={{ fontFamily: '"Cormorant Upright", serif', fontSize: '13px', color: '#364573', margin: 0, lineHeight: 1.6 }}>
-        Tu presencia es nuestro mejor regalo. Si deseas tener un detalle con nosotros,
+      <p style={{ fontWeight: 500, margin: '8px 0 4px', fontFamily: '"Cormorant Upright", serif', fontSize: '22px', color: '#E1B3B9'}}>Regalo de sobre</p>
+      <p style={{ fontFamily: '"Cormorant Upright", serif', fontSize: '17px', color: '#364573', margin: 0, lineHeight: 1.6 }}>
+        Si deseas tener un detalle con nosotros,
         agradecemos de corazón un sobre con tu contribución el día del evento.
       </p>
     </div>
@@ -111,30 +111,31 @@ const [giftAnimate, setGiftAnimate] = useState(false)
       </div>
 
       <div className="page-inner">
-        {!opened && <Envelope onOpen={() => setOpened(true)} />}
+        {!opened && <Envelope onOpen={() => setOpened(true)} guests={guestCount}/>}
 
         {opened && (
           <div className="invite-card">
             {/* Hojas decorativas en los márgenes internos de la tarjeta blanca */}
-            <CornerFlourishTopLeft className="botanical-margin botanical-margin-tr" aria-hidden="true" />
-            <CornerFlourishBottomRight className="botanical-margin botanical-margin-bl" aria-hidden="true" />
+            <CornerFlourishTopLeft className="botanical-margin botanical-margin-tr" aria-hidden="true" color="green" />
+            <CornerFlourishBottomRight className="botanical-margin botanical-margin-bl" aria-hidden="true" color="green" />
 
             <div className="invite-content">
               <Reveal effect="fade">
-                <PhotoSlot src={FOTOS.principal} alt="Foto principal de la pareja" label="FOTO PRINCIPAL — pareja" big />
+                <PhotoSlot src={FOTOS.principal} alt="Foto principal de la pareja" label="FOTO PRINCIPAL — pareja" big  isMain={true}/>
               </Reveal>
 
               <Reveal effect="fade" delay={0.1}>
                 <div style={{ textAlign: 'center' }}>
-                  <p className="serif" style={{ fontFamily: '"Cormorant Upright", serif', fontSize: '16px', letterSpacing: '2px', color: '#785353', margin: '25px 0 4px' }}>
+                  <p className="serif" style={{ fontFamily: '"Cormorant Upright", serif', fontSize: '16px', letterSpacing: '2px', color: '#E1B3B9', margin: '25px 0 4px' }}>
                     ¡NOS CASAMOS!
                   </p>
-                  <h1 className="serif title" style={{ fontFamily: '"Cormorant Upright", serif', fontSize: '34px', fontWeight: 'bold', margin: '0 0 8px', color:'#000080' }}>
+                  <h1 className="serif title" style={{ fontFamily: '"Cormorant Upright", serif', fontSize: '34px', fontWeight: 600, margin: '0 0 8px', color:'#2B304C' }}>
                     {EVENTO.novios}
                   </h1>
-                  <p style={{ fontFamily: '"Cormorant Upright", serif', fontSize: '15px', color: '#785353', margin: '0 0 4px' }}>{EVENTO.fecha}</p>
+                  <p style={{ fontFamily: '"Cormorant Upright", serif', fontSize: '15px', color: '#E1B3B9', margin: '0 0 4px' }}>{EVENTO.fecha}</p>
 
-                  <OrnateDivider style={{ margin: '4px auto 22px', display: 'block' }} />
+                  {/* <OrnateDivider style={{ margin: '4px auto 22px', display: 'block' }} /> */}
+                  <SimpleDivider style={{ margin: '0 auto 16px', display: 'block' }} />
                 </div>
               </Reveal>
 
@@ -142,7 +143,7 @@ const [giftAnimate, setGiftAnimate] = useState(false)
   <div style={{ textAlign: 'center', margin: '0 0 30px' }}>
     <p style={{
       fontFamily: '"Cormorant Upright", serif', fontSize: '18px',
-      color: '#785353',
+      color: '#E1B3B9',
       letterSpacing: '1px',
       margin: '0 0 12px',
       fontStyle: 'italic',
@@ -189,7 +190,7 @@ const [giftAnimate, setGiftAnimate] = useState(false)
         fontFamily: '"Cormorant Upright", serif',
         fontSize: '18px',
         fontWeight: '300',
-        color: '#5f5e5a',
+        color: '#E1B3B9',
         fontStyle: 'italic',
         lineHeight: 1.8,
         margin: '0 0 10px',
@@ -211,10 +212,10 @@ const [giftAnimate, setGiftAnimate] = useState(false)
 
               {/* Sección de detalles: ceremonia, recepción y código de vestimenta */}
               <Reveal effect="slide-left" delay={0.05}>
-                <div className="details-card" style={{backgroundColor:'#fffafaaf'}}>
+                <div className="details-card" style={{backgroundColor:'rgb(244 227 227 / 69%)'}}>
                   <div className="detail-block">
                     <RingsIcon />
-                    <h4 style={{color: '#785353', fontWeight: '600', fontSize: '22px'}} className="serif detail-title">Ceremonia</h4>
+                    <h4 style={{color: '#E1B3B9', fontWeight: '600', fontSize: '22px'}} className="serif detail-title">Ceremonia</h4>
                     <p className="detail-text" style={{fontFamily: '"Cormorant Upright", serif', fontSize:'32px', color: '#364573'}}>{EVENTO.ceremonia.lugar}</p>
                     <p className="detail-text detail-hour" style={{fontSize: '22px', color: '#364573'}} >{EVENTO.ceremonia.hora}</p>
                   </div>
@@ -222,8 +223,8 @@ const [giftAnimate, setGiftAnimate] = useState(false)
                   <div className="detail-divider" />
 
                   <div className="detail-block">
-                    <RingsIcon />
-                    <h4 style={{color: '#785353', fontWeight: '600', fontSize: '22px'}} className="serif detail-title">Recepción</h4>
+                    <ToastIcon />
+                    <h4 style={{color: '#E1B3B9', fontWeight: '600', fontSize: '22px'}} className="serif detail-title">Recepción</h4>
                     <p className="detail-text"  style={{fontFamily: '"Cormorant Upright", serif', fontSize:'32px', color: '#364573'}} >{EVENTO.recepcion.lugar}</p>
                     <p className="detail-text detail-hour" style={{fontSize:'22px', color: '#364573'}}>{EVENTO.recepcion.hora}</p>
                   </div>
@@ -231,7 +232,7 @@ const [giftAnimate, setGiftAnimate] = useState(false)
                   <div className="detail-divider" />
 
                   <div className="detail-block">
-                    <h4 style={{color: '#785353', fontWeight: '600', fontSize: '22px'}} className="serif detail-title">Código de vestimenta — {EVENTO.vestimenta.titulo}</h4>
+                    <h4 style={{color: '#E1B3B9', fontWeight: '600', fontSize: '22px'}} className="serif detail-title">Código de vestimenta — {EVENTO.vestimenta.titulo}</h4>
                     <div className="dress-code-row">
                       <div className="dress-code-col">
                         <TuxedoIcon />
@@ -247,7 +248,7 @@ const [giftAnimate, setGiftAnimate] = useState(false)
 
                   <div className="detail-block">
                     <BoyIcon/>
-                    <h4 style={{ color: '#785353', fontWeight: '600', fontSize: '22px' }} className="serif detail-title">
+                    <h4 style={{ color: '#E1B3B9', fontWeight: '600', fontSize: '22px' }} className="serif detail-title">
                       Evento solo para adultos
                     </h4>
                     <p style={{
@@ -270,10 +271,10 @@ const [giftAnimate, setGiftAnimate] = useState(false)
                 <SimpleDivider style={{ margin: '0 auto 16px', display: 'block' }} />
               <Reveal effect="slide-up" delay={0.15}>
                 <div className="rsvp-section">
-                  <h3 className="serif" style={{ margin: '0 0 4px', textAlign: 'center', fontFamily: '"Cormorant Upright", serif', fontSize: '22px', color: '#785353' }}>
+                  <h3 className="serif" style={{ margin: '0 0 4px', textAlign: 'center', fontFamily: '"Cormorant Upright", serif', fontSize: '22px', color: '#E1B3B9' }}>
                     Confirma tu asistencia
                   </h3>
-                  <p style={{ fontFamily: '"Cormorant Upright", serif', fontSize: '13px', color: '#5f5e5a', textAlign: 'center', margin: '0 0 1.25rem' }}>
+                  <p style={{ fontFamily: '"Cormorant Upright", serif', fontSize: '13px', color: '#785353', textAlign: 'center', margin: '0 0 1.25rem' }}>
                     Por favor confirma antes del {EVENTO.fechaLimiteRsvp}
                   </p>
                   <RsvpForm guestCount={guestCount} />

@@ -7,9 +7,40 @@ import React, { useState } from 'react'
  * 2. Pasa la ruta en la prop `src`, ej: src="/fotos/principal.jpg"
  * Si `src` no se define, se muestra el marcador punteado (no es clicable).
  */
-export default function PhotoSlot({ src, alt, label, aspect = '4 / 3', big = false }) {
+export default function PhotoSlot({ src, alt, label, aspect = '4 / 3', big = false, isMain = false }) {
   const [hover, setHover] = useState(false)
   const [open, setOpen] = useState(false)
+
+  if(isMain){
+    return (
+      <div
+          onClick={() => setOpen(false)}
+          style={{
+            
+            inset: 0,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            zIndex: 1000,
+            padding: '24px',
+            cursor: 'zoom-out',
+          }}
+        >
+          <img
+            src={src}
+            alt={alt}
+            style={{
+              maxWidth: '100%',
+              maxHeight: '60vh',
+              borderRadius: '8px',
+              boxShadow: '0 20px 40px rgba(0,0,0,0.5)',
+            }}
+          />
+          
+        </div>
+    )
+  }
+
 
   return (
     <>

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { CornerFlourishTopLeft, CornerFlourishBottomRight } from './Botanicals.jsx'
 
-export default function Envelope({ onOpen }) {
+export default function Envelope({ onOpen, guests }) {
   const [opening, setOpening] = useState(false)
 
   const handleClick = () => {
@@ -44,7 +44,7 @@ export default function Envelope({ onOpen }) {
           alignItems: 'center',
         }}
       >
-        <img src="https://invitacion.celebremos.click/wp-content/uploads/2025/07/SobreB.png" alt="sobre" style={{maxWidth: '300px', clipPath: `inset(0 0 20px 0)`}}  />
+        <img src="/fotos/envelope4k.png" alt="sobre" style={{maxWidth: '400px'/* , clipPath: `inset(0 0 20px 0)` */}}  />
         {/* <svg width="260" height="190" viewBox="0 0 260 190" aria-hidden="true">
           <defs>
             <filter id="envShadow" x="-25%" y="-25%" width="150%" height="150%">
@@ -106,8 +106,17 @@ export default function Envelope({ onOpen }) {
         </svg> */}
 
         <p className="serif" style={{
-          fontSize: '16px',
+          fontSize: '18px',
           marginTop: '20px',
+          color: 'white',
+          letterSpacing: '0.5px',
+          opacity: 0.85,
+        }}>
+          {guests === 1 ? `¡Hemos reservado un cupo para ti!` : `¡Hemos reservado dos cupos para ti!`}
+        </p>
+        <p className="serif" style={{
+          fontSize: '16px',
+          marginTop: '8px',
           color: 'white',
           letterSpacing: '0.5px',
           opacity: 0.85,

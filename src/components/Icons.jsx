@@ -102,3 +102,41 @@ export function BoyIcon(){
     </>
   )
 }
+
+export function ToastIcon({ style, className }) {
+  return (
+    <svg width="64" height="64" viewBox="0 0 130 145" style={style} className={className} aria-hidden="true">
+      <g fill="none" stroke="#8a8367" strokeLinecap="round" strokeLinejoin="round">
+
+        {/* Copa izquierda */}
+        <g transform="rotate(22, 60, 75)">
+          <path d="M24 10 Q18 46,36 62 L36 110 L20 122 L54 122 L38 110 L38 62 Q56 46,52 10 Z" strokeWidth="2.6"/>
+          <path d="M26 18 Q28 38,36 52" strokeWidth="1.3" opacity="0.35"/>
+          <path d="M40 18 Q42 30,38 44" strokeWidth="1" opacity="0.25"/>
+          <circle cx="32" cy="26" r="2.2" fill="#8a8367" stroke="none" opacity="0.5"/>
+          <circle cx="30" cy="38" r="1.6" fill="#8a8367" stroke="none" opacity="0.4"/>
+          <circle cx="34" cy="48" r="1.2" fill="#8a8367" stroke="none" opacity="0.3"/>
+        </g>
+
+        {/* Copa derecha */}
+        <g transform="rotate(-22, 70, 75)">
+          <path d="M106 10 Q112 46,94 62 L94 110 L110 122 L76 122 L92 110 L92 62 Q74 46,78 10 Z" strokeWidth="2.6"/>
+          <path d="M104 18 Q102 38,94 52" strokeWidth="1.3" opacity="0.35"/>
+          <path d="M90 18 Q88 30,92 44" strokeWidth="1" opacity="0.25"/>
+          <circle cx="98" cy="26" r="2.2" fill="#8a8367" stroke="none" opacity="0.5"/>
+          <circle cx="100" cy="38" r="1.6" fill="#8a8367" stroke="none" opacity="0.4"/>
+          <circle cx="96" cy="48" r="1.2" fill="#8a8367" stroke="none" opacity="0.3"/>
+        </g>
+
+        {/* Destellos */}
+        <line x1="65" y1="2"  x2="65" y2="14"  strokeWidth="2.6"/>
+        <line x1="53" y1="6"  x2="58" y2="16"  strokeWidth="2.6"/>
+        <line x1="77" y1="6"  x2="72" y2="16"  strokeWidth="2.6"/>
+        <line x1="45" y1="14" x2="51" y2="22"  strokeWidth="1.8" opacity="0.55"/>
+        <line x1="85" y1="14" x2="79" y2="22"  strokeWidth="1.8" opacity="0.55"/>
+        <circle cx="65" cy="1" r="2" fill="#8a8367" stroke="none" opacity="0.4"/>
+
+      </g>
+    </svg>
+  )
+}
