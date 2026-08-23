@@ -11,7 +11,7 @@ import useInView from './hooks/useInView.js'
  * ====== PERSONALIZA AQUÍ ======
  */
 const EVENTO = {
-  novios: 'Gaby & Jorge',
+  novios: 'Gabriela & Jorge',
   fecha: 'Sábado 14 de noviembre, 2026 · 5:00 pm',
   ceremonia: {
     lugar: 'Parroquia Sagrado Corazón de María',
@@ -103,6 +103,17 @@ const [giftAnimate, setGiftAnimate] = useState(false)
     return () => clearTimeout(t)
   }
 }, [giftInView])
+
+function getMapUrl(coords) {
+  const ua = navigator.userAgent.toLowerCase()
+  if (/android/.test(ua)) {
+    return `geo:${coords}?q=${coords}`  // Android: abre selector de apps
+  }
+  if (/iphone|ipad|ipod/.test(ua)) {
+    return `maps://maps.apple.com/?q=${coords}` // iOS: Apple Maps con selector
+  }
+  return `https://www.google.com/maps?q=${coords}` // escritorio: Google Maps
+}
 
   return (
     <div className={`page${!opened ? ' centered' : ''}`} style={{backgroundColor:'#fffafaaf'}}>
@@ -221,7 +232,7 @@ const [giftAnimate, setGiftAnimate] = useState(false)
                     <p className="detail-text" style={{fontFamily: '"Cormorant Upright", serif', fontSize:'32px', color: '#364573'}}>{EVENTO.ceremonia.lugar}</p>
                     <p className="detail-text detail-hour" style={{fontSize: '22px', color: '#364573'}} >{EVENTO.ceremonia.hora}</p>
                     <a
-                      href={`https://maps.google.com/maps?q=${EVENTO.ceremonia.maps}`}
+                      href={getMapUrl(EVENTO.ceremonia.maps)}
                       target="_blank"
                       rel="noopener noreferrer"
                       style={{
@@ -249,7 +260,7 @@ const [giftAnimate, setGiftAnimate] = useState(false)
                     <p className="detail-text"  style={{fontFamily: '"Cormorant Upright", serif', fontSize:'32px', color: '#364573'}} >{EVENTO.recepcion.lugar}</p>
                     <p className="detail-text detail-hour" style={{fontSize:'22px', color: '#364573'}}>{EVENTO.recepcion.hora}</p>
                     <a
-                      href={`https://maps.google.com/maps?q=${EVENTO.recepcion.maps}`}
+                      href={getMapUrl(EVENTO.recepcion.maps)}
                       target="_blank"
                       rel="noopener noreferrer"
                       style={{
