@@ -26,7 +26,7 @@ export function CornerFlourishTopLeft({ style, className, color }) {
         <path d="M4 100 C 10 60, 40 14, 100 6" />
         <path d="M20 96 C 26 64, 50 30, 96 22" />
       </g>
-      <g opacity="0.85" stroke={stroke}>
+      <g stroke={stroke}>
         <g transform="translate(14,92)"><LeafCluster  stroke={stroke} rotate="-40" scale="0.8"  color={color}/></g>
         <g transform="translate(38,58)"><LeafCluster  stroke={stroke} rotate="-15" scale="0.9"  color={color}/></g>
         <g transform="translate(70,30)"><LeafCluster  stroke={stroke} rotate="20" scale="0.85"  color={color}/></g>
@@ -43,7 +43,7 @@ export function CornerFlourishBottomRight({ style, className, color }) {
         <path d="M216 120 C 210 160, 180 206, 120 214" />
         <path d="M200 124 C 194 156, 170 190, 124 198" />
       </g>
-      <g opacity="0.85">
+      <g>
         <g transform="translate(206,128)"><LeafCluster rotate="140" scale="0.8"  color={color}/></g>
         <g transform="translate(182,162)"><LeafCluster rotate="165" scale="0.9"  color={color}/></g>
         <g transform="translate(150,190)"><LeafCluster rotate="200" scale="0.85" color={color} /></g>

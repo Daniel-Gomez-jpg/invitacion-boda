@@ -67,7 +67,6 @@ button {
   z-index: 0;
   width: 110px;
   height: auto;
-
   pointer-events: none;
 }
 

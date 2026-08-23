@@ -140,7 +140,7 @@ function getMapUrl(coords) {
 
               <Reveal effect="fade" delay={0.1}>
                 <div style={{ textAlign: 'center' }}>
-                  <p className="serif" style={{ fontFamily: '"Cormorant Upright", serif', fontSize: '16px', letterSpacing: '2px', color: '#E1B3B9', margin: '25px 0 4px' }}>
+                  <p className="serif" style={{ fontFamily: '"Cormorant Upright", serif', fontSize: '16px', fontWeight: 'bolder', letterSpacing: '2px', color: '#E1B3B9', margin: '25px 0 4px' }}>
                     ¡NOS CASAMOS!
                   </p>
                   <h1 className="serif title" style={{ fontFamily: '"Cormorant Upright", serif', fontSize: '34px', fontWeight: 600, margin: '0 0 8px', color:'#2B304C' }}>
@@ -167,7 +167,7 @@ function getMapUrl(coords) {
     <span style={{
       fontFamily: '"Cormorant Upright", serif',
       fontSize: '18px',
-      fontWeight: '500',
+      fontWeight: '800',
       color: '#E1B3B9',
       letterSpacing: '3px',
       lineHeight: 1.2,
@@ -178,7 +178,7 @@ function getMapUrl(coords) {
     <span style={{
       fontFamily: '"Cormorant Upright", serif',
       fontSize: '18px',
-      fontWeight: '500',
+      fontWeight: '800',
       color: '#E1B3B9',
       letterSpacing: '3px',
       lineHeight: 1.2,
