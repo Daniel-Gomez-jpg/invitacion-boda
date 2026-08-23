@@ -14,12 +14,14 @@ const EVENTO = {
   novios: 'Gaby & Jorge',
   fecha: 'Sábado 14 de noviembre, 2026 · 5:00 pm',
   ceremonia: {
-    lugar: 'Parque la Satelite, San Salvador',
-    hora: '5:00 pm',
+    lugar: 'Parroquia Sagrado Corazón de María',
+  hora: '4:00 pm',
+  maps: '79+Av+Sur+200+San+Salvador',
   },
   recepcion: {
-    lugar: 'Jardines del recuerdo, San Salvador',
-    hora: '6:30 pm',
+    lugar: 'Hilton San Salvador, Colonia Escalón',
+  hora: '6:00 pm',
+  maps: '89+Av+Norte+y+11+Calle+Poniente+Colonia+Escalon+San+Salvador+1101,+El+Salvador',
   },
   vestimenta: {
     titulo: 'Formal',
@@ -116,8 +118,8 @@ const [giftAnimate, setGiftAnimate] = useState(false)
         {opened && (
           <div className="invite-card">
             {/* Hojas decorativas en los márgenes internos de la tarjeta blanca */}
-            <CornerFlourishTopLeft className="botanical-margin botanical-margin-tr" aria-hidden="true" color="green" />
-            <CornerFlourishBottomRight className="botanical-margin botanical-margin-bl" aria-hidden="true" color="green" />
+            <CornerFlourishTopLeft className="botanical-margin botanical-margin-tr" aria-hidden="true" color="#3D4D85" />
+            <CornerFlourishBottomRight className="botanical-margin botanical-margin-bl" aria-hidden="true" color="#3D4D85" />
 
             <div className="invite-content">
               <Reveal effect="fade">
@@ -218,6 +220,25 @@ const [giftAnimate, setGiftAnimate] = useState(false)
                     <h4 style={{color: '#E1B3B9', fontWeight: '600', fontSize: '22px'}} className="serif detail-title">Ceremonia</h4>
                     <p className="detail-text" style={{fontFamily: '"Cormorant Upright", serif', fontSize:'32px', color: '#364573'}}>{EVENTO.ceremonia.lugar}</p>
                     <p className="detail-text detail-hour" style={{fontSize: '22px', color: '#364573'}} >{EVENTO.ceremonia.hora}</p>
+                    <a
+                      href={`https://maps.google.com/maps?q=${EVENTO.ceremonia.maps}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{
+                        display: 'inline-block',
+                        marginTop: '10px',
+                        padding: '7px 18px',
+                        borderRadius: '20px',
+                        border: '1px solid #364573',
+                        color: '#364573',
+                        fontSize: '12px',
+                        fontFamily: '"Jost", sans-serif',
+                        letterSpacing: '0.5px',
+                        textDecoration: 'none',
+                      }}
+                    >
+                      Ver mapa
+                    </a>
                   </div>
 
                   <div className="detail-divider" />
@@ -227,6 +248,25 @@ const [giftAnimate, setGiftAnimate] = useState(false)
                     <h4 style={{color: '#E1B3B9', fontWeight: '600', fontSize: '22px'}} className="serif detail-title">Recepción</h4>
                     <p className="detail-text"  style={{fontFamily: '"Cormorant Upright", serif', fontSize:'32px', color: '#364573'}} >{EVENTO.recepcion.lugar}</p>
                     <p className="detail-text detail-hour" style={{fontSize:'22px', color: '#364573'}}>{EVENTO.recepcion.hora}</p>
+                    <a
+                      href={`https://maps.google.com/maps?q=${EVENTO.recepcion.maps}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{
+                        display: 'inline-block',
+                        marginTop: '10px',
+                        padding: '7px 18px',
+                        borderRadius: '20px',
+                        border: '1px solid #364573',
+                        color: '#364573',
+                        fontSize: '12px',
+                        fontFamily: '"Jost", sans-serif',
+                        letterSpacing: '0.5px',
+                        textDecoration: 'none',
+                      }}
+                    >
+                      Ver mapa
+                    </a>
                   </div>
 
                   <div className="detail-divider" />

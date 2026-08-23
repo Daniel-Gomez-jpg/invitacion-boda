@@ -10,11 +10,11 @@ const fillLeaf = '#cdc6a8'
 
 function LeafCluster({ rotate = 0, scale = 1, color }) {
   return (
-    <g transform={`rotate(${rotate}) scale(${scale})`} fill={color === 'green' ? color : '#e77e8f'} stroke={stroke} strokeWidth="1.2" opacity="0.9">
+    <g transform={`rotate(${rotate}) scale(${scale})`} fill={color != undefined || color != null ? color : '#e77e8f'} stroke={stroke} strokeWidth="1.2" opacity="0.9">
       <path d="M0 0 C 14 -6, 26 -2, 32 6 C 22 8, 10 8, 0 0 Z" />
       <path d="M0 0 C 12 6, 14 16, 10 24 C 2 18, -2 8, 0 0 Z" />
       <path d="M0 0 C -10 -8, -22 -8, -30 -2 C -20 4, -8 6, 0 0 Z" />
-      <circle cx="0" cy="0" r="2.2" fill={color === 'green' ? color : '#e77e8f'} stroke="none" />
+      <circle cx="0" cy="0" r="2.2" fill={color != undefined || color != null ? color : '#e77e8f'} stroke="none" />
     </g>
   )
 }
@@ -81,8 +81,8 @@ export function SimpleDivider({ style, className }) {
         <path d="M120 12 C 150 2, 180 2, 214 12" />
         <circle cx="110" cy="12" r="3" fill="#D8B4AF" stroke="#364573" strokeWidth="1" />
       </g>
-      <g transform="translate(40,11)"><LeafCluster rotate="0" scale="0.45" color="green" /></g>
-      <g transform="translate(180,11)"><LeafCluster rotate="180" scale="0.45" color="green" /></g>
+      <g transform="translate(40,11)"><LeafCluster rotate="0" scale="0.45" color="#3D4D85" /></g>
+      <g transform="translate(180,11)"><LeafCluster rotate="180" scale="0.45" color="#3D4D85" /></g>
     </svg>
   )
 }
