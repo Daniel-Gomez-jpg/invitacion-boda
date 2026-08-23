@@ -19,7 +19,8 @@ const EVENTO = {
   maps: '79+Av+Sur+200+San+Salvador',
   },
   recepcion: {
-    lugar: 'Hotel Hilton, Salón Costa del sol',
+    lugar: 'Hotel Hilton,',
+    salon: 'Salón Costa del sol',
   hora: '6:00 pm',
   maps: '89+Av+Norte+y+11+Calle+Poniente+Colonia+Escalon+San+Salvador+1101,+El+Salvador',
   },
@@ -296,6 +297,7 @@ function getMapUrl(coords) {
                     <ToastIcon />
                     <h4 style={{color: '#E1B3B9', fontWeight: '600', fontSize: '22px'}} className="serif detail-title">Recepción</h4>
                     <p className="detail-text"  style={{fontFamily: '"Cormorant Upright", serif', fontSize:'32px', color: '#364573'}} >{EVENTO.recepcion.lugar}</p>
+                    <p className="detail-text"  style={{fontFamily: '"Cormorant Upright", serif', fontSize:'32px', color: '#364573'}} >{EVENTO.recepcion.salon}</p>
                     <p className="detail-text detail-hour" style={{fontSize:'22px', color: '#364573'}}>{EVENTO.recepcion.hora}</p>
                     <a
                       href={getMapUrl(EVENTO.recepcion.maps)}

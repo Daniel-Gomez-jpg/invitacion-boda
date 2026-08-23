@@ -106,14 +106,17 @@ export default function Envelope({ onOpen, guests }) {
         </svg> */}
 
         <p className="serif" style={{
-          fontSize: '18px',
-          marginTop: '20px',
-          color: 'white',
-          letterSpacing: '0.5px',
-          opacity: 0.85,
-        }}>
-          {guests === 1 ? `¡Hemos reservado un cupo para ti!` : `¡Hemos reservado dos cupos para ti!`}
-        </p>
+  fontSize: '18px',
+  marginTop: '20px',
+  color: 'white',
+  letterSpacing: '0.5px',
+  opacity: 0.85,
+}}>
+  {guests === 1
+    ? <>¡Hemos reservado <span style={{fontWeight: 800}}>un</span> cupo para ti!</>
+    : <>¡Hemos reservado <span style={{fontWeight: 800}}>dos</span> cupos para ti!</>
+  }
+</p>
         <p className="serif" style={{
           fontSize: '16px',
           marginTop: '8px',
