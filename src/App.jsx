@@ -12,14 +12,14 @@ import useInView from './hooks/useInView.js'
  */
 const EVENTO = {
   novios: 'Gabriela & Jorge',
-  fecha: 'Sábado 14 de noviembre, 2026 · 5:00 pm',
+  fecha: 'Sábado 13 de Febrero, 2027',
   ceremonia: {
     lugar: 'Parroquia Sagrado Corazón de María',
   hora: '4:00 pm',
   maps: '79+Av+Sur+200+San+Salvador',
   },
   recepcion: {
-    lugar: 'Hilton San Salvador, Colonia Escalón',
+    lugar: 'Hotel Hilton, Salón Costa del sol',
   hora: '6:00 pm',
   maps: '89+Av+Norte+y+11+Calle+Poniente+Colonia+Escalon+San+Salvador+1101,+El+Salvador',
   },
@@ -145,10 +145,48 @@ function getMapUrl(coords) {
                   <h1 className="serif title" style={{ fontFamily: '"Cormorant Upright", serif', fontSize: '34px', fontWeight: 600, margin: '0 0 8px', color:'#2B304C' }}>
                     {EVENTO.novios}
                   </h1>
-                  <p style={{ fontFamily: '"Cormorant Upright", serif', fontSize: '15px', color: '#E1B3B9', margin: '0 0 4px' }}>{EVENTO.fecha}</p>
 
                   {/* <OrnateDivider style={{ margin: '4px auto 22px', display: 'block' }} /> */}
                   <SimpleDivider style={{ margin: '0 auto 16px', display: 'block' }} />
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px', margin: '0 0 30px' }}>
+  {/* Número del día */}
+  <span style={{
+    fontFamily: '"Cormorant Upright", serif',
+    fontSize: '72px',
+    fontWeight: '500',
+    color: '#3D4D85',
+    lineHeight: 1,
+    marginTop: '-20px',
+  }}>
+    13
+  </span>
+
+  {/* Día y mes apilados */}
+  <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+    <span style={{
+      fontFamily: '"Cormorant Upright", serif',
+      fontSize: '18px',
+      fontWeight: '500',
+      color: '#E1B3B9',
+      letterSpacing: '3px',
+      lineHeight: 1.2,
+      textTransform: 'uppercase',
+    }}>
+      Sábado
+    </span>
+    <span style={{
+      fontFamily: '"Cormorant Upright", serif',
+      fontSize: '18px',
+      fontWeight: '500',
+      color: '#E1B3B9',
+      letterSpacing: '3px',
+      lineHeight: 1.2,
+      textTransform: 'uppercase',
+    }}>
+      Febrero
+    </span>
+  </div>
+</div>
                 </div>
               </Reveal>
 
