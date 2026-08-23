@@ -22,7 +22,7 @@ const EVENTO = {
     lugar: 'Hotel Hilton,',
     salon: 'Salón Costa del sol',
   hora: '6:00 pm',
-  maps: '89+Av+Norte+y+11+Calle+Poniente+Colonia+Escalon+San+Salvador+1101,+El+Salvador',
+  maps: '89+Av+Norte+y+11+Calle+Poniente+Colonia+Escalon+San+Salvador+1101+El+Salvador',
   },
   vestimenta: {
     titulo: 'Formal',
