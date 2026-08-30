@@ -26,8 +26,8 @@ const EVENTO = {
   },
   vestimenta: {
     titulo: 'Formal',
-    hombres: 'Traje oscuro, se sugiere corbata o moño.',
-    mujeres: 'Vestido largo o de coctel, evitar el blanco.',
+    hombres: 'Traje formal con corbata o moño.',
+    mujeres: 'Vestido largo, evitar el blanco.',
   },
   fechaLimiteRsvp: '1 de octubre',
 }
@@ -39,9 +39,9 @@ const EVENTO = {
  */
 const FOTOS = {
   principal: "/fotos/couple-main.jpeg",
-  foto2: null,
-  foto3: null,
-  foto4: null,
+  foto2: "/fotos/secondary-image-2.jpeg",
+  foto3: "/fotos/secondary-image-1.jpeg",
+  foto4: "/fotos/secondary-image-3.jpeg",
 }
 
 /**
@@ -85,8 +85,7 @@ function GiftSection() {
       </div>
       <p style={{ fontWeight: 500, margin: '8px 0 4px', fontFamily: '"Cormorant Upright", serif', fontSize: '22px', color: '#E1B3B9'}}>Regalo de sobre</p>
       <p style={{ fontFamily: '"Cormorant Upright", serif', fontSize: '17px', color: '#364573', margin: 0, lineHeight: 1.6 }}>
-        Si deseas tener un detalle con nosotros,
-        agradecemos de corazón un sobre con tu contribución el día del evento.
+        Agradeceremos mucho su regalo en sobre el día del evento.
       </p>
     </div>
   )
@@ -248,7 +247,7 @@ function getMapUrl(coords) {
         margin: '0 0 10px',
         letterSpacing: '0.3px',
       }}>
-        "El que halló esposa halló el bien, y alcanzó la benevolencia del Señor."
+        "Encontré el amor de mi vida, lo he abrazado y no lo dejaré jamás"
       </p>
       <p style={{
         fontFamily: '"Cormorant Upright", serif',
@@ -258,7 +257,7 @@ function getMapUrl(coords) {
         margin: 0,
         letterSpacing: '1px',
       }}>
-        — Proverbios 18:22
+        —  cantares 3:4
       </p>
     </div>
 
@@ -323,7 +322,7 @@ function getMapUrl(coords) {
                   <div className="detail-divider" />
 
                   <div className="detail-block">
-                    <h4 style={{color: '#E1B3B9', fontWeight: '600', fontSize: '22px'}} className="serif detail-title">Código de vestimenta — {EVENTO.vestimenta.titulo}</h4>
+                    <h4 style={{color: '#E1B3B9', fontWeight: '600', fontSize: '22px'}} className="serif detail-title">Código de Vestimenta — {EVENTO.vestimenta.titulo}</h4>
                     <div className="dress-code-row">
                       <div className="dress-code-col">
                         <TuxedoIcon />
@@ -340,17 +339,19 @@ function getMapUrl(coords) {
                   <div className="detail-block">
                     <BoyIcon/>
                     <h4 style={{ color: '#E1B3B9', fontWeight: '600', fontSize: '22px' }} className="serif detail-title">
-                      Evento solo para adultos
+                      Celebración para Adultos
                     </h4>
                     <p style={{
                       fontFamily: '"Cormorant Upright", serif',
                       fontSize: '17px',
                       color: '#364573',
-                      margin: '4px 0 0',
+                      margin: '4px auto 0',
                       lineHeight: 1.6,
                       fontStyle: 'italic',
+                      maxWidth: '320px',
+                      textAlign: 'center'
                     }}>
-                      Con todo el cariño, les pedimos que esta celebración sea un espacio exclusivo para adultos. Agradecemos su comprensión.
+                      Esta celebración ha sido pensada para disfrutarse entre adultos. Gracias por comprendernos.
                     </p>
                   </div>
                 </div>

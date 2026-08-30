@@ -94,6 +94,14 @@ button {
   gap: 8px;
   margin-bottom: 1.5rem;
 }
+@media (max-width: 480px) {
+  .photo-grid {
+    gap: 6px;
+    margin-left: -24px;
+    margin-right: -24px;
+    width: calc(100% + 48px);
+  }
+}
 
 .gift-card {
   background: #faf9f5;
