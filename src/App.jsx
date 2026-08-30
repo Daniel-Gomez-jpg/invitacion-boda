@@ -29,7 +29,7 @@ const EVENTO = {
     hombres: 'Traje formal con corbata o moño.',
     mujeres: 'Vestido largo, evitar el blanco.',
   },
-  fechaLimiteRsvp: '1 de Nomviembre',
+  fechaLimiteRsvp: '1 de Noviembre',
 }
 
 /**
