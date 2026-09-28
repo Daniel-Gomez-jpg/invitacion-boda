@@ -7,9 +7,7 @@ import { CornerFlourishTopLeft, CornerFlourishBottomRight, OrnateDivider, Simple
 import { RingsIcon, TuxedoIcon, DressIcon, GiftIcon, BoyIcon, ToastIcon } from './components/Icons.jsx'
 import useInView from './hooks/useInView.js'
 
-/**
- * ====== PERSONALIZA AQUÍ ======
- */
+
 const EVENTO = {
   novios: 'Gabriela & Jorge',
   fecha: 'Sábado 13 de Febrero, 2027',
@@ -32,11 +30,6 @@ const EVENTO = {
   fechaLimiteRsvp: '1 de Noviembre',
 }
 
-/**
- * ====== TUS FOTOS ======
- * Coloca tus imágenes en /public/fotos/ y escribe aquí el nombre de archivo.
- * Ejemplo: "/fotos/principal.jpg". Déjalo en null para mostrar el marcador.
- */
 const FOTOS = {
   principal: "/fotos/couple-main.jpeg",
   foto2: "/fotos/secondary-image-2.jpeg",
@@ -44,13 +37,6 @@ const FOTOS = {
   foto4: "/fotos/secondary-image-3.jpeg",
 }
 
-/**
- * ====== INVITADOS POR LINK ======
- * El número de invitados se lee de la URL, ej:
- *   tusitio.com/?invitados=1   -> invitación individual, sin pregunta de acompañante
- *   tusitio.com/?invitados=2   -> invitación doble, pregunta si llevará acompañante
- * Si no se especifica en la URL, se usa el valor por defecto de abajo.
- */
 const INVITADOS_POR_DEFECTO = 1
 
 function useGuestCount() {
@@ -83,7 +69,7 @@ function GiftSection() {
       <div ref={giftRef}>
         <GiftIcon animate={giftAnimate} style={{ marginBottom: '6px' }} />
       </div>
-      <p style={{ fontWeight: 500, margin: '8px 0 4px', fontFamily: '"Cormorant Upright", serif', fontSize: '22px', color: '#E1B3B9'}}>Regalo de sobre</p>
+      <p style={{ fontWeight: 500, margin: '8px 0 4px', fontFamily: '"Cormorant Upright", serif', fontSize: '22px', color: '#C35E67'}}>Regalo de sobre</p>
       <p style={{ fontFamily: '"Cormorant Upright", serif', fontSize: '17px', color: '#364573', margin: 0, lineHeight: 1.6 }}>
         Agradeceremos mucho su regalo en sobre el día del evento.
       </p>
@@ -139,7 +125,7 @@ function getMapUrl(coords) {
 
               <Reveal effect="fade" delay={0.1}>
                 <div style={{ textAlign: 'center' }}>
-                  <p className="serif" style={{ fontFamily: '"Cormorant Upright", serif', fontSize: '16px', fontWeight: 'bolder', letterSpacing: '2px', color: '#E1B3B9', margin: '25px 0 4px' }}>
+                  <p className="serif" style={{ fontFamily: '"Cormorant Upright", serif', fontSize: '16px', fontWeight: 'bolder', letterSpacing: '2px', color: '#C35E67', margin: '25px 0 4px' }}>
                     ¡NOS CASAMOS!
                   </p>
                   <h1 className="serif title" style={{ fontFamily: '"Cormorant Upright", serif', fontSize: '34px', fontWeight: 600, margin: '0 0 8px', color:'#2B304C' }}>
@@ -165,9 +151,9 @@ function getMapUrl(coords) {
   <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
     <span style={{
       fontFamily: '"Cormorant Upright", serif',
-      fontSize: '18px',
+      fontSize: '19px',
       fontWeight: '800',
-      color: '#E1B3B9',
+      color: '#C35E67',
       letterSpacing: '3px',
       lineHeight: 1.2,
       textTransform: 'uppercase',
@@ -176,9 +162,9 @@ function getMapUrl(coords) {
     </span>
     <span style={{
       fontFamily: '"Cormorant Upright", serif',
-      fontSize: '18px',
+      fontSize: '19px',
       fontWeight: '800',
-      color: '#E1B3B9',
+      color: '#C35E67',
       letterSpacing: '3px',
       lineHeight: 1.2,
       textTransform: 'uppercase',
@@ -193,8 +179,8 @@ function getMapUrl(coords) {
               <Reveal effect="fade" delay={0.15}>
   <div style={{ textAlign: 'center', margin: '0 0 30px' }}>
     <p style={{
-      fontFamily: '"Cormorant Upright", serif', fontSize: '18px',
-      color: '#E1B3B9',
+      fontFamily: '"Cormorant Upright", serif', fontSize: '19px',
+      color: '#C35E67',
       letterSpacing: '1px',
       margin: '0 0 12px',
       fontStyle: 'italic',
@@ -239,9 +225,9 @@ function getMapUrl(coords) {
               <div style={{ margin: '20px auto 20px', maxWidth: '420px' }}> 
       <p style={{
         fontFamily: '"Cormorant Upright", serif',
-        fontSize: '18px',
+        fontSize: '19px',
         fontWeight: '300',
-        color: '#E1B3B9',
+        color: '#C35E67',
         fontStyle: 'italic',
         lineHeight: 1.8,
         margin: '0 0 10px',
@@ -266,7 +252,7 @@ function getMapUrl(coords) {
                 <div className="details-card" style={{backgroundColor:'rgb(235 223 223 / 69%)'}}>
                   <div className="detail-block">
                     <RingsIcon />
-                    <h4 style={{color: '#E1B3B9', fontWeight: '600', fontSize: '22px'}} className="serif detail-title">Ceremonia</h4>
+                    <h4 style={{color: '#C35E67', fontWeight: '600', fontSize: '22px'}} className="serif detail-title">Ceremonia</h4>
                     <p className="detail-text" style={{fontFamily: '"Cormorant Upright", serif', fontSize:'32px', color: '#364573'}}>{EVENTO.ceremonia.lugar}</p>
                     <p className="detail-text detail-hour" style={{fontSize: '22px', color: '#364573'}} >{EVENTO.ceremonia.hora}</p>
                     <a
@@ -276,7 +262,7 @@ function getMapUrl(coords) {
                       style={{
                         display: 'inline-block',
                         marginTop: '10px',
-                        padding: '7px 18px',
+                        padding: '7px 19px',
                         borderRadius: '20px',
                         border: '1px solid #364573',
                         color: '#364573',
@@ -294,7 +280,7 @@ function getMapUrl(coords) {
 
                   <div className="detail-block">
                     <ToastIcon />
-                    <h4 style={{color: '#E1B3B9', fontWeight: '600', fontSize: '22px'}} className="serif detail-title">Recepción</h4>
+                    <h4 style={{color: '#C35E67', fontWeight: '600', fontSize: '22px'}} className="serif detail-title">Recepción</h4>
                     <p className="detail-text"  style={{fontFamily: '"Cormorant Upright", serif', fontSize:'32px', color: '#364573'}} >{EVENTO.recepcion.lugar}</p>
                     <p className="detail-text"  style={{fontFamily: '"Cormorant Upright", serif', fontSize:'32px', color: '#364573'}} >{EVENTO.recepcion.salon}</p>
                     <p className="detail-text detail-hour" style={{fontSize:'22px', color: '#364573'}}>{EVENTO.recepcion.hora}</p>
@@ -305,7 +291,7 @@ function getMapUrl(coords) {
                       style={{
                         display: 'inline-block',
                         marginTop: '10px',
-                        padding: '7px 18px',
+                        padding: '7px 19px',
                         borderRadius: '20px',
                         border: '1px solid #364573',
                         color: '#364573',
@@ -322,7 +308,7 @@ function getMapUrl(coords) {
                   <div className="detail-divider" />
 
                   <div className="detail-block">
-                    <h4 style={{color: '#E1B3B9', fontWeight: '600', fontSize: '22px'}} className="serif detail-title">Código de Vestimenta — {EVENTO.vestimenta.titulo}</h4>
+                    <h4 style={{color: '#C35E67', fontWeight: '600', fontSize: '22px'}} className="serif detail-title">Código de Vestimenta — {EVENTO.vestimenta.titulo}</h4>
                     <div className="dress-code-row">
                       <div className="dress-code-col">
                         <TuxedoIcon />
@@ -338,7 +324,7 @@ function getMapUrl(coords) {
 
                   <div className="detail-block">
                     <BoyIcon/>
-                    <h4 style={{ color: '#E1B3B9', fontWeight: '600', fontSize: '22px' }} className="serif detail-title">
+                    <h4 style={{ color: '#C35E67', fontWeight: '600', fontSize: '22px' }} className="serif detail-title">
                       Celebración para Adultos
                     </h4>
                     <p style={{
@@ -363,7 +349,7 @@ function getMapUrl(coords) {
                 <SimpleDivider style={{ margin: '0 auto 16px', display: 'block' }} />
               <Reveal effect="slide-up" delay={0.15}>
                 <div className="rsvp-section">
-                  <h3 className="serif" style={{ margin: '0 0 4px', textAlign: 'center', fontFamily: '"Cormorant Upright", serif', fontSize: '22px', color: '#E1B3B9' }}>
+                  <h3 className="serif" style={{ margin: '0 0 4px', textAlign: 'center', fontFamily: '"Cormorant Upright", serif', fontSize: '22px', color: '#C35E67' }}>
                     Confirma tu asistencia
                   </h3>
                   <p style={{ fontFamily: '"Cormorant Upright", serif', fontSize: '13px', color: '#785353', textAlign: 'center', margin: '0 0 1.25rem' }}>
