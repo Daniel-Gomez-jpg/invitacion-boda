@@ -25,7 +25,8 @@ const EVENTO = {
   vestimenta: {
     titulo: 'Formal',
     hombres: 'Traje formal con corbata o moño.',
-    mujeres: 'Vestido largo, evitar el blanco.',
+    mujeres: 'Vestido largo,',
+    mujeres2: 'evitar el blanco.',
   },
   fechaLimiteRsvp: '1 de Noviembre',
 }
@@ -317,6 +318,7 @@ function getMapUrl(coords) {
                       <div className="dress-code-col">
                         <DressIcon />
                         <p className="detail-text" style={{fontFamily: '"Cormorant Upright", serif', color: '#364573', fontSize:'17px'}}>{EVENTO.vestimenta.mujeres}</p>
+                        <p className="detail-text" style={{fontFamily: '"Cormorant Upright", serif', color: '#364573', fontSize:'17px', marginTop: '-5px'}}>{EVENTO.vestimenta.mujeres2}</p>
                       </div>
                     </div>
                   </div>
@@ -337,7 +339,7 @@ function getMapUrl(coords) {
                       maxWidth: '320px',
                       textAlign: 'center'
                     }}>
-                      Esta celebración ha sido pensada para disfrutarse entre adultos. Gracias por comprendernos.
+                      Esta celebración ha sido pensada para disfrutarse entre adultos. <br/>Gracias por comprendernos.
                     </p>
                   </div>
                 </div>
@@ -352,7 +354,7 @@ function getMapUrl(coords) {
                   <h3 className="serif" style={{ margin: '0 0 4px', textAlign: 'center', fontFamily: '"Cormorant Upright", serif', fontSize: '22px', color: '#C35E67' }}>
                     Confirma tu asistencia
                   </h3>
-                  <p style={{ fontFamily: '"Cormorant Upright", serif', fontSize: '13px', color: '#785353', textAlign: 'center', margin: '0 0 1.25rem' }}>
+                  <p style={{ fontFamily: '"Cormorant Upright", serif', fontSize: '19px', color: '#785353', textAlign: 'center', margin: '0 0 1.25rem', fontWeight:'bold' }}>
                     Por favor confirma antes del {EVENTO.fechaLimiteRsvp}
                   </p>
                   <RsvpForm guestCount={guestCount} />
