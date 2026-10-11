@@ -116,7 +116,7 @@ export default function RsvpForm({ guestCount = 1 }) {
       <input
         type="text"
         required
-        placeholder="Tu nombre"
+        placeholder="Tu nombre completo"
         value={data.name}
         onChange={handleChange('name')}
         style={inputStyle}
