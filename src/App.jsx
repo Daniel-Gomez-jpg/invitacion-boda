@@ -332,7 +332,7 @@ function getMapUrl(coords) {
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
       <div style={{
         width: '64px', height: '64px', borderRadius: '50%',
-        background: '#ffffff',
+        background: '#fefefe',
         border: '1px solid #ece8de',
         boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
       }} />
@@ -342,7 +342,7 @@ function getMapUrl(coords) {
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
       <div style={{
         width: '64px', height: '64px', borderRadius: '50%',
-        background: '#f5f0e0',
+        background: '#f3f2e6',
         border: '1px solid #ece8de',
         boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
       }} />
@@ -352,7 +352,7 @@ function getMapUrl(coords) {
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
       <div style={{
         width: '64px', height: '64px', borderRadius: '50%',
-        background: '#1a2f6e',
+        background: '#2c4083',
         boxShadow: '0 2px 8px rgba(0,0,0,0.15)',
       }} />
       <span style={{ fontFamily: '"Cormorant Upright", serif', fontSize: '14px', color: '#5f5e5a' }}>Azul marino</span>
