@@ -24,9 +24,9 @@ const EVENTO = {
   },
   vestimenta: {
     titulo: 'Formal',
-    hombres: 'Traje formal con corbata o moño.',
-    mujeres: 'Vestido largo,',
-    mujeres2: 'evitar el blanco.',
+    hombres: 'Traje formal.',
+    mujeres: 'Vestido largo.',/* 
+    mujeres2: 'evitar el blanco.', */
   },
   fechaLimiteRsvp: '1 de Diciembre',
 }
@@ -256,7 +256,7 @@ function getMapUrl(coords) {
                     <h4 style={{color: '#C35E67', fontWeight: '600', fontSize: '22px'}} className="serif detail-title">Ceremonia</h4>
                     <p className="detail-text" style={{fontFamily: '"Cormorant Upright", serif', fontSize:'32px', color: '#364573'}}>{EVENTO.ceremonia.lugar}</p>
                     <p className="detail-text detail-hour" style={{fontSize: '22px', color: '#364573'}} >{EVENTO.ceremonia.hora}</p>
-                    <a
+                    {/* <a
                       href={getMapUrl(EVENTO.ceremonia.maps)}
                       target="_blank"
                       rel="noopener noreferrer"
@@ -274,7 +274,7 @@ function getMapUrl(coords) {
                       }}
                     >
                       Ver mapa
-                    </a>
+                    </a> */}
                   </div>
 
                   <div className="detail-divider" />
@@ -285,7 +285,7 @@ function getMapUrl(coords) {
                     <p className="detail-text"  style={{fontFamily: '"Cormorant Upright", serif', fontSize:'32px', color: '#364573'}} >{EVENTO.recepcion.lugar}</p>
                     <p className="detail-text"  style={{fontFamily: '"Cormorant Upright", serif', fontSize:'32px', color: '#364573'}} >{EVENTO.recepcion.salon}</p>
                     <p className="detail-text detail-hour" style={{fontSize:'22px', color: '#364573'}}>{EVENTO.recepcion.hora}</p>
-                    <a
+                    {/* <a
                       href={getMapUrl(EVENTO.recepcion.maps)}
                       target="_blank"
                       rel="noopener noreferrer"
@@ -303,7 +303,7 @@ function getMapUrl(coords) {
                       }}
                     >
                       Ver mapa
-                    </a>
+                    </a> */}
                   </div>
 
                   <div className="detail-divider" />
@@ -320,8 +320,46 @@ function getMapUrl(coords) {
                         <p className="detail-text" style={{fontFamily: '"Cormorant Upright", serif', color: '#364573', fontSize:'17px'}}>{EVENTO.vestimenta.mujeres}</p>
                         <p className="detail-text" style={{fontFamily: '"Cormorant Upright", serif', color: '#364573', fontSize:'17px', marginTop: '-5px'}}>{EVENTO.vestimenta.mujeres2}</p>
                       </div>
+                      
                     </div>
                   </div>
+                  <div className="detail-block">
+  <h4 style={{ color: '#785353', fontWeight: '600', fontSize: '22px' }} className="serif detail-title">
+    Evitar Colores
+  </h4>
+  <div style={{ display: 'flex', justifyContent: 'center', gap: '24px', marginTop: '12px', flexWrap: 'wrap' }}>
+    
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+      <div style={{
+        width: '64px', height: '64px', borderRadius: '50%',
+        background: '#ffffff',
+        border: '1px solid #ece8de',
+        boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
+      }} />
+      <span style={{ fontFamily: '"Cormorant Upright", serif', fontSize: '14px', color: '#5f5e5a' }}>Blanco</span>
+    </div>
+
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+      <div style={{
+        width: '64px', height: '64px', borderRadius: '50%',
+        background: '#f5f0e0',
+        border: '1px solid #ece8de',
+        boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
+      }} />
+      <span style={{ fontFamily: '"Cormorant Upright", serif', fontSize: '14px', color: '#5f5e5a' }}>Crema</span>
+    </div>
+
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+      <div style={{
+        width: '64px', height: '64px', borderRadius: '50%',
+        background: '#1a2f6e',
+        boxShadow: '0 2px 8px rgba(0,0,0,0.15)',
+      }} />
+      <span style={{ fontFamily: '"Cormorant Upright", serif', fontSize: '14px', color: '#5f5e5a' }}>Azul marino</span>
+    </div>
+
+  </div>
+  </div>
                   <div className="detail-divider" />
 
                   <div className="detail-block">

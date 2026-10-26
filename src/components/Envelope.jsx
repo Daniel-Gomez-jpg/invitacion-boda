@@ -113,8 +113,8 @@ export default function Envelope({ onOpen, guests }) {
   opacity: 0.85,
 }}>
   {guests === 1
-    ? <>¡Hemos reservado <span style={{fontWeight: 800}}>un</span> cupo para ti!</>
-    : <>¡Hemos reservado <span style={{fontWeight: 800}}>dos</span> cupos para ti!</>
+    ? <>¡Hemos reservado <span style={{fontWeight: 800}}>un</span> espacio para ti!</>
+    : <>¡Hemos reservado <span style={{fontWeight: 800}}>dos</span> espacios para ti!</>
   }
 </p>
         <p className="serif" style={{
