@@ -4,6 +4,24 @@ import { CornerFlourishTopLeft, CornerFlourishBottomRight } from './Botanicals.j
 export default function Envelope({ onOpen, guests }) {
   const [opening, setOpening] = useState(false)
 
+  const circleNumber = {
+  display: 'inline-flex',
+  alignItems: 'center',
+  fontFamily: "ui-monospace",
+  justifyContent: 'center',
+  width: '28px',
+  height: '28px',
+  borderRadius: '50%',
+  background: 'white',
+color: '#3D4D85',
+border: 'none',
+  fontWeight: 700,
+  fontSize: '22px',
+  lineHeight: 1,
+  margin: '0 4px',
+  verticalAlign: 'middle',
+}
+
   const handleClick = () => {
     if (opening) return
     setOpening(true)
@@ -113,8 +131,8 @@ export default function Envelope({ onOpen, guests }) {
   opacity: 0.85,
 }}>
   {guests === 1
-    ? <>¡Hemos reservado <span style={{fontWeight: 800}}>un</span> espacio para ti!</>
-    : <>¡Hemos reservado <span style={{fontWeight: 800}}>dos</span> espacios para ti!</>
+    ? <>¡Hemos reservado <span style={circleNumber}>1</span> espacio para ti!</>
+    : <>¡Hemos reservado <span style={circleNumber}>2</span> espacios para ti!</>
   }
 </p>
         <p className="serif" style={{

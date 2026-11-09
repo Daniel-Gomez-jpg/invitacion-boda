@@ -13,7 +13,7 @@ const EVENTO = {
   fecha: 'Sábado 13 de Febrero, 2027',
   ceremonia: {
     lugar: 'Parroquia Sagrado Corazón de María',
-  hora: '4:00 pm',
+  hora: '3:30 pm',
   maps: '79+Av+Sur+200+San+Salvador',
   },
   recepcion: {
@@ -72,7 +72,7 @@ function GiftSection() {
       </div>
       <p style={{ fontWeight: 500, margin: '8px 0 4px', fontFamily: '"Cormorant Upright", serif', fontSize: '22px', color: '#C35E67'}}>Regalo de sobre</p>
       <p style={{ fontFamily: '"Cormorant Upright", serif', fontSize: '17px', color: '#364573', margin: 0, lineHeight: 1.6 }}>
-        Agradeceremos mucho su regalo en sobre el día del evento.
+        Para quienes deseen tener un detalle con nosotros, agradeceremos su regalo en sobre.{/* Agradeceremos mucho su regalo en sobre el día del evento. */}
       </p>
     </div>
   )
@@ -377,7 +377,7 @@ function getMapUrl(coords) {
                       maxWidth: '320px',
                       textAlign: 'center'
                     }}>
-                      Esta celebración ha sido pensada para disfrutarse entre adultos. <br/>Gracias por comprendernos.
+                      Con mucho cariño, hemos decidido que nuestra celebración sea un evento exclusivo para adultos. Agradecemos de corazón su comprensión y esperamos compartir con ustedes este día tan especial.{/* Esta celebración ha sido pensada para disfrutarse entre adultos. <br/>Gracias por comprendernos. */}
                     </p>
                   </div>
                 </div>
