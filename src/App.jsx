@@ -72,7 +72,7 @@ function GiftSection() {
       </div>
       <p style={{ fontWeight: 500, margin: '8px 0 4px', fontFamily: '"Cormorant Upright", serif', fontSize: '22px', color: '#C35E67'}}>Regalo de sobre</p>
       <p style={{ fontFamily: '"Cormorant Upright", serif', fontSize: '17px', color: '#364573', margin: 0, lineHeight: 1.6 }}>
-        Para quienes deseen tener un detalle con nosotros, agradeceremos su regalo en sobre.{/* Agradeceremos mucho su regalo en sobre el día del evento. */}
+        Agradecemos sus muestras de cariño en regalo de sobre.{/* Agradeceremos mucho su regalo en sobre el día del evento. */}
       </p>
     </div>
   )
