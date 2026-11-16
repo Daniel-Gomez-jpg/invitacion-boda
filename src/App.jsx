@@ -28,7 +28,7 @@ const EVENTO = {
     mujeres: 'Vestido largo.',/* 
     mujeres2: 'evitar el blanco.', */
   },
-  fechaLimiteRsvp: '1 de Diciembre',
+  fechaLimiteRsvp: '15 de Diciembre',
 }
 
 const FOTOS = {
