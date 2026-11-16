@@ -393,7 +393,7 @@ function getMapUrl(coords) {
                     Confirma tu asistencia
                   </h3>
                   <p style={{ fontFamily: '"Cormorant Upright", serif', fontSize: '19px', color: '#785353', textAlign: 'center', margin: '0 0 1.25rem', fontWeight:'bold' }}>
-                    Por favor confirma antes del {EVENTO.fechaLimiteRsvp}
+                    Por favor confirma antes del <br/>{EVENTO.fechaLimiteRsvp}
                   </p>
                   <RsvpForm guestCount={guestCount} />
                 </div>
